@@ -5,6 +5,11 @@ from model_loader import load_models
 from fastapi.middleware.cors import CORSMiddleware 
 
 app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"message": "API Tes Minat Jurusan aktif!"}
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Atau ganti dengan domain frontend seperti 'http://localhost:3000'
